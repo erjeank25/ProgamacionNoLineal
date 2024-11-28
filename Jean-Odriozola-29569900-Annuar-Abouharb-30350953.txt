@@ -1,0 +1,127 @@
+R1 PARTE A Y B
+
+Se utilizo el programa creado 1.LagrangeMultiple.py
+
+PS C:\Users\Jean Odriozola\Desktop\CONTENIDO\codigos> & "C:/Users/Jean Odriozola/AppData/Local/Programs/Python/Python312/python.exe" "c:/Users/Jean Odriozola/Desktop/CONTENIDO/codigos/1.LagrangeMultiple.py"
+Bienvenido al optimizador de inversiones flexible.
+Ingrese la función objetivo a maximizar (use x e y): 0.1*x + 0.08*y
+Ingrese el tipo de restricción (igualdad/desigualdad) o 'fin' para terminar: igualdad
+Ingrese la restricción de igualdad (use x e y): x + y - 1
+Ingrese el tipo de restricción (igualdad/desigualdad) o 'fin' para terminar: desigualdad
+Ingrese la restricción de desigualdad (use x e y): 0.02*x**2 + 0.03*y**2 - 0.05
+Ingrese el tipo de restricción (igualdad/desigualdad) o 'fin' para terminar: fin
+
+a. Formulación como un problema de Lagrange con múltiples restricciones:
+Función de Lagrange:
+L = 0.1*x + 0.08*y + λ1*(x + y - 1) + λ2*(0.02*x**2 + 0.03*y**2 - 0.05)
+
+Ecuaciones de Lagrange:
+∂L/∂[x, y, λ1, λ2][0] = 0.04*x*λ2 + λ1 + 0.1 = 0
+∂L/∂[x, y, λ1, λ2][1] = 0.06*y*λ2 + λ1 + 0.08 = 0
+∂L/∂[x, y, λ1, λ2][2] = x + y - 1 = 0
+∂L/∂[x, y, λ1, λ2][3] = 0.02*x**2 + 0.03*y**2 - 0.05 = 0
+
+b. Resolución utilizando CVXPY:
+Estado: optimal
+Valor óptimo: 0.1094355951344207
+Solución óptima:
+x = 1.471779766967942
+y = -0.47177976952966877
+
+R2 PARTE A Y B
+
+PS C:\Users\Jean Odriozola\Desktop\CONTENIDO\codigos> & "C:/Users/Jean Odriozola/AppData/Local/Programs/Python/Python312/python.exe" "c:/Users/Jean Odriozola/Desktop/CONTENIDO/codigos/2. ConRestriccionesGraficado.py"
+Ingrese la función objetivo (use x, y, z como variables): 5*x**2 + 3*y**2 + z**2
+Óptimo encontrado: 6521.7391304996545
+Valores óptimos de x, y, z: [13.04357239 21.7390479  65.2173797 ]
+C:\Users\Jean Odriozola\AppData\Local\Programs\Python\Python312\Lib\tkinter\__init__.py:862: UserWarning: Creating legend with loc="best" can be slow with large amounts of data.
+  func(*args)
+
+EN ESTE PUNTO SE GENERA UNA GRAFICA EN 3D QUE MUESTRA EL PUNTO OPTIMO DE LA FUNCION DE COSTO, PARA MAS INFROMACION VER IMAGENES 1 Y 2 ANEXADAS
+
+Validación:
+Valor de la restricción en el óptimo: 0.0
+Valor de la función objetivo en el óptimo: 6521.7391304996545
+
+R3 A B y C
+
+PS C:\Users\Jean Odriozola\Desktop\CONTENIDO\codigos> & "C:/Users/Jean Odriozola/AppData/Local/Programs/Python/Python312/python.exe" "c:/Users/Jean Odriozola/Desktop/CONTENIDO/codigos/3. GradienteDescendenteGraficado.py"
+Ingrese la función objetivo (use x, y, z como variables): x**2 + y**2 + z**2 - 2*x*y + 3*z
+Ingrese el gradiente respecto a x: 2*x - 2*y
+Ingrese el gradiente respecto a y: 2*y - 2*x
+Ingrese el gradiente respecto a z: 2*z + 3
+Ingrese el tamaño del paso (alpha): 0.1
+Ingrese el valor inicial para x: 1 
+Ingrese el valor inicial para y: 1
+Ingrese el valor inicial para z: 1
+Ingrese el número de iteraciones: 15
+Mínimo encontrado: -2.242262874754466
+Punto óptimo (x, y, z): [ 1.          1.         -1.41203907]
+
+EN ESTE PUNTO SE GENERAN 2 GRAFICOS, EL PRIMERO INDICA LA TENDENCIA DE LA FUNCION OBJETIVO EN EL LAPSO DE 15 ITERACIONES
+, EL 2DO INDICA EL DESPLAZAMIENTO DE LA FUNCION MINIMIZADA EN EL PLANO 3D SOBRE LA FUNCION GRADIENTE.
+Las imagenes a apreciar son la 3 y la 4.
+
+C:\Users\Jean Odriozola\AppData\Local\Programs\Python\Python312\Lib\tkinter\__init__.py:862: UserWarning: Creating legend with loc="best" can be slow with large amounts of data.
+  func(*args)
+
+R4 
+
+PS C:\Users\Jean Odriozola\Desktop\CONTENIDO\codigos> & "C:/Users/Jean Odriozola/AppData/Local/Programs/Python/Python312/python.exe" "c:/Users/Jean Odriozola/Desktop/CONTENIDO/codigos/4. MinimizarVariasRestricciones.py"
+Ingrese la función objetivo (use 'x' como variable): x**2 + 4*x + 5
+¿Desea maximizar o minimizar? (max/min): min
+Ingrese una restricción (o 'fin' para terminar): x - 2
+Ingrese una restricción (o 'fin' para terminar): 5 - x
+Ingrese una restricción (o 'fin' para terminar): fin
+Estado: optimal
+Mínimo: 17.0
+Valor óptimo de x: 2.0
+
+Verificación de restricciones:
+g1(x) = x - 2 = 0
+g2(x) = 5 - x = 3.00000000000000
+
+R5
+
+1. Puntos estacionarios:
+
+Los puntos estacionarios son puntos en una función donde la primera derivada es igual a cero o no existe. 
+Estos puntos son importantes porque representan posibles máximos, mínimos o puntos de inflexión en la función.
+
+Ejemplo: Consideremos la función f(x) = x³ - 3x² + 2x + 1
+
+Para encontrar los puntos estacionarios, igualamos la primera derivada a cero:
+f'(x) = 3x² - 6x + 2 = 0
+
+Resolviendo esta ecuación, obtenemos x = 1 y x = 1/3. Estos son los puntos estacionarios de la función.
+
+2. Máximos:
+
+Un máximo es un punto estacionario donde la función alcanza su valor más alto en comparación 
+con los puntos cercanos. Puede ser local (el valor más alto en una región específica) o global 
+(el valor más alto en todo el dominio de la función).
+
+Ejemplo: En la función f(x) = -x² + 4, el punto (0, 4) es un máximo global. 
+La función alcanza su valor más alto en x = 0.
+
+VER FOTO EjemploMaximo
+
+3. Mínimos:
+
+Un mínimo es un punto estacionario donde la función alcanza su valor más bajo en comparación 
+con los puntos cercanos. Al igual que los máximos, pueden ser locales o globales.
+
+Ejemplo: En la función f(x) = x² + 2, el punto (0, 2) es un mínimo global. La función alcanza su valor más bajo 
+en x = 0.
+
+VER FOTO EjemploMinimo
+
+4. Puntos de inflexión:
+
+Un punto de inflexión es un punto en una curva donde la función cambia de cóncava a convexa o viceversa. 
+En términos matemáticos, es un punto donde la segunda derivada de la función cambia de signo.
+
+Ejemplo: En la función f(x) = x³, el punto (0, 0) es un punto de inflexión. La curva cambia de cóncava hacia abajo 
+a cóncava hacia arriba en este punto.
+
+VER FOTO EjemploInflexion
